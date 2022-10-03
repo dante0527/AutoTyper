@@ -22,9 +22,10 @@ def py_to_txt(file):
     return text
 
 
-# Splits text into characters
+# Splits text into lines
 def split(text):
-    return [char for char in text]
+    return [line for line in text]
+
 
 # Auto type text
 def autotype(text):
