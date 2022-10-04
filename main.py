@@ -1,7 +1,10 @@
 from pynput.keyboard import Key, Controller
+import typer
 import time
 import pathlib
 import os
+
+app = typer.Typer()
 
 # Convert .py to .txt and return text
 def py_to_txt(file):
@@ -22,25 +25,34 @@ def py_to_txt(file):
     return text
 
 
+# Read file and return text
+def read_file(file):
+    with open(file, 'r') as f:
+        return f.read()
+
+
 # Splits text into lines
 def split(text):
     return [line for line in text]
 
 
 # Auto type text
-def autotype(text):
+@app.command()
+def autotype(file: str, s: float = 0.05):
+
+    text = read_file(file)
 
     # Controls keyboard
     keyboard = Controller()
 
     # Wait for cursor placement
-    time.sleep(3)
+    time.sleep(5)
 
     # Type file
-    for word in split(text):
-        keyboard.type(word)
-        time.sleep(0.05)
+    for line in text:
+        keyboard.type(line)
+        time.sleep(s)
 
 
 if __name__ == "__main__":
-    autotype(py_to_txt("tia.py"))
+    app()
