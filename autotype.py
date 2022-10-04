@@ -1,12 +1,13 @@
 from pynput.keyboard import Key, Controller
 import typer
 import time
+import os
 
 app = typer.Typer()
 
 # Read file and return text
 def read_file(file):
-    with open(file, 'r') as f:
+    with open(f"{os.getcwd()}/{file}", 'r') as f:
         return f.read()
 
 
