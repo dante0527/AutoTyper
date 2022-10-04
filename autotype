@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-python3 /usr/local/bin/autotype.py $1 $2
+python3 /usr/local/bin/autotype.py $1
 
 FILE=${1?Error: no file given}
-SPEED=${2:-'--0.04'}

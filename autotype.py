@@ -1,7 +1,7 @@
 from pynput.keyboard import Key, Controller
 import typer
 import time
-import os
+import os, sys
 
 app = typer.Typer()
 
@@ -13,7 +13,7 @@ def read_file(file):
 
 # Auto type text
 @app.command()
-def autotype(file: str, s: float = 0.04):
+def autotype(file: str, speed: float = 0.04):
 
     text = read_file(file)
 
@@ -26,7 +26,7 @@ def autotype(file: str, s: float = 0.04):
     # Type file
     for line in text:
         keyboard.type(line)
-        time.sleep(s)
+        time.sleep(speed)
 
 
 if __name__ == "__main__":
