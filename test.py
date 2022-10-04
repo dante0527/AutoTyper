@@ -10,7 +10,7 @@ body = 'I hope you are having a good day :)'
 msg = EmailMessage()
 msg['Subject'] = 'Hi Tia'
 msg['From'] = dante_email
-msg['To'] = 'tnuzzolilli@gmail.com'
+msg['To'] = 'other.email@gmail.com'
 msg.set_content(body)
 
 def gab_email():
