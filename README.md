@@ -1,2 +1,2 @@
 # AutoTyper
-Converts Python script to text file and automatically types it through keyboard controller
+Reads contents of a file and controls your keyboard to type it out.
